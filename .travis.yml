@@ -6,11 +6,15 @@ script:
 - flake8 --exclude polls/migrations/,manage.py  .
 deploy:
   provider: heroku
+  buildpack: python
   api_key:
     secure: U9ncDYvC94a1m5rDt0xl9J3JYXf45QswBVstXcpHzE2mZfkzY/x+WFYBSiKkxw0kfuv8cp4NUqpBCWcjrkQf6LUXRaYvnvSWyeZ1qUdnLugyLT6MW2/X9LvaiFQ/JvHhTCJL54KA8nhWobD6vGYfLxmvK1g8rJ3dtxG3ArZHxeIhm7dg4D9P6IDaVTOq2jOF2q9LtHBiweV2rbbSTLQ65+uocLIDujEC1OTMW+2ydeHGQUGRqVu09PUt3ecCnrgNVJkzT8jTWN0IazFx16ezMD1aBzuEGIq7YCIVOSgUZUmsoHp+omwnBAMi0+6yAYASQnJCbcZ8AoDKnbau9iit5/7UzOba1aPI+zjxUjFAuoiegBp7N4FHStcTUC2uYs+afeGzers/fhIn8GG2E97x3wrZnNEQXo4MhundniOBVjg8yLy6E96LyRFBcks1i9ZE2pJinq1rgYI9Shoodv8ZAOFu/2EYFmXdhX6K5pC5VSW+jD/x61XwgMt7d7Dn8Q1R5RSGtvFpVH32ME+Nesw922RBkI/3UikCBw2UKNT9Cv5NOQ42+Po1n+0LeHhuSy9zesZZvimgfestmFHWdhGcsxRqTMDZMUpUg8yt/z3XBcvQU6jWp5SkaxL2ejO9yiLOvud874UyJtLCNFZFYhi7I3ExRsK5n3N674Qm82jK9fs=
+  strategy: git
+  app: glucosetracker-demo  
   run:
     - "python manage.py makemigrations"
     - "python manage.py migrate"
+    - restart
   app: gcs01-marceloabk-travis
   on:
     repo: marceloabk/GCS01
