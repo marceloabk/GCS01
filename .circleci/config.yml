@@ -51,9 +51,9 @@ jobs:
           path: test-reports
           destination: test-reports
 
-    deployment:
-      staging:
-        branch: master
-        heroku:
-          appname: gcs01-marceloabk-circle
-          
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: gcs01-marceloabk-circle
+      
