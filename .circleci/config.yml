@@ -55,5 +55,5 @@ jobs:
       staging:
         branch: master
         heroku:
-          appname: djangobasico
+          appname: gcs01-marceloabk-circle
           
