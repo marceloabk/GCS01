@@ -60,8 +60,4 @@ jobs:
               heroku restart
             fi
 
-
-            SHA256:JTQVZziolTMFR2xmSZW/PzNNpWq7pSEMfFdbPDZ9IbU H4D3S@Marvin
-
-
       
