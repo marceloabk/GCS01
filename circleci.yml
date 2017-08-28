@@ -1,3 +1,6 @@
+machine:
+  python:
+    version: pypy-3.6
 test:
   override:
     - flake8 --exclude polls/migrations/,manage.py  .
