@@ -1,9 +1,9 @@
 test:
   override:
-    - python manage.py test
     - flake8 --exclude polls/migrations/,manage.py  .
+    - python manage.py test
 deployment:
   staging:
     branch: master
     heroku:
-      appname: foo-bar-123
+      appname: gcs01-marceloabk-circle
