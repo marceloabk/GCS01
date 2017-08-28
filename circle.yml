@@ -13,4 +13,5 @@ deployment:
     heroku:
       appname: gcs01-marceloabk-circle
     commands:
+      - heroku run python manage.py makemigrations --app gcs01-marceloabk-circle
       - heroku run python manage.py migrate --app gcs01-marceloabk-circle
