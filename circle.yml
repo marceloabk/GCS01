@@ -10,8 +10,6 @@ test:
 deployment:
   staging:
     branch: master
-    heroku:
-      appname: gcs01-marceloabk-circle
     commands:
-      - heroku run python manage.py makemigrations --app gcs01-marceloabk-circle
+      - git push git@heroku.com:gcs01-marceloabk-circle.git $CIRCLE_SHA1:master
       - heroku run python manage.py migrate --app gcs01-marceloabk-circle
